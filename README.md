@@ -2,7 +2,7 @@
 
 _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니다._
 
-## Front-end
+## 시작 작업
 
 - index.html위치에서 favicon.ico를 자동으로 찾아준다.
 
@@ -46,3 +46,12 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
   <div class="material-icons">login</div>
   <div class="material-icons">upload</div>
   ```
+
+## 헤더와 드롭다운
+
+### 로고
+
+- 모든 inline 태그는 baseline이 존재한다.
+- `position` 속성을 이용해 수직/수평 가운데 정렬 등을 할 수 있다.
+
+### 세브메뉴
