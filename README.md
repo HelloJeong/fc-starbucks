@@ -54,4 +54,8 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
 - 모든 inline 태그는 baseline이 존재한다.
 - `position` 속성을 이용해 수직/수평 가운데 정렬 등을 할 수 있다.
 
-### 세브메뉴
+### 서브메뉴
+
+- a태그 href 속성
+  - `"#"`은 해시라는 특정한 기능을 갖고 있기 때문에 페이지에 약간의 변화가 있을수도 있음.
+  - `"javascript:void(0)"`을 권장
