@@ -59,3 +59,37 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
 - a태그 href 속성
   - `"#"`은 해시라는 특정한 기능을 갖고 있기 때문에 페이지에 약간의 변화가 있을수도 있음.
   - `"javascript:void(0)"`을 권장
+
+### 메인메뉴
+
+- `BEM(Block Element Modifier)`
+
+  - `요소__일부분`
+
+  ```html
+  <div class="container">
+    <div class="name"></div>
+    <div class="item">
+      <div class="name"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="container__name"></div>
+    <div class="item">
+      <div class="item__name"></div>
+    </div>
+  </div>
+  ```
+
+  - `요소--상태`
+
+  ```html
+  <div class="btn primary"></div>
+  <div class="btn success"></div>
+  <div class="btn error"></div>
+
+  <div class="btn btn--primary"></div>
+  <div class="btn btn--success"></div>
+  <div class="btn btn--error"></div>
+  ```
