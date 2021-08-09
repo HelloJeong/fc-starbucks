@@ -1,0 +1,23 @@
+{
+  "name": "fc-starbucks",
+  "version": "1.0.0",
+  "description": "_Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니다._",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelloJeong/fc-starbucks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HelloJeong/fc-starbucks/issues"
+  },
+  "homepage": "https://github.com/HelloJeong/fc-starbucks#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
