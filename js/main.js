@@ -1,4 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var lodash_1 = __importDefault(require("lodash"));
+var gsap_1 = __importDefault(require("gsap"));
 (function () {
     var searchEl = document.querySelector(".search");
     if (searchEl instanceof HTMLDivElement) {
@@ -16,5 +22,23 @@
                 searchInputEl_1.setAttribute("placeholder", "");
             });
         }
+    }
+    var badgeEl = document.querySelector("header .badges");
+    if (badgeEl instanceof HTMLDivElement) {
+        window.addEventListener("scroll", lodash_1.default.throttle(function () {
+            console.log(window.scrollY);
+            if (window.scrollY > 500) {
+                gsap_1.default.to(badgeEl, 0.6, {
+                    opacity: 0,
+                    display: "none",
+                });
+            }
+            else {
+                gsap_1.default.to(badgeEl, 0.6, {
+                    opacity: 1,
+                    display: "block",
+                });
+            }
+        }, 300));
     }
 })();

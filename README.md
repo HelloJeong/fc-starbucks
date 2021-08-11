@@ -93,3 +93,13 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
   <div class="btn btn--success"></div>
   <div class="btn btn--error"></div>
   ```
+
+### 전역 배지
+
+- `lodash`
+
+  - `throttle(func, ms)` : 일정시간에 한 번만 실행되게 제한을 걸 수 있음
+
+- `gsap`
+  - 애니메이션을 쉽게 사용하기 위함
+  - `to(ele, duration_sec, option)`
