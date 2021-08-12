@@ -103,3 +103,5 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
 - `gsap`
   - 애니메이션을 쉽게 사용하기 위함
   - `to(ele, duration_sec, option)`
+
+### 요소 슬라이드
