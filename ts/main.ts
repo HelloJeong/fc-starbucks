@@ -43,3 +43,11 @@ import gsap from "gsap";
     );
   }
 })();
+
+const fadeEls = document.querySelectorAll(".fade-in");
+fadeEls.forEach((fadeEl, idx) => {
+  gsap.to(fadeEl, 1, {
+    delay: (idx + 1) * 0.7,
+    opacity: 1,
+  });
+});

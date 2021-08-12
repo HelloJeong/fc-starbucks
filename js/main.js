@@ -42,3 +42,10 @@ var gsap_1 = __importDefault(require("gsap"));
         }, 300));
     }
 })();
+var fadeEls = document.querySelectorAll(".fade-in");
+fadeEls.forEach(function (fadeEl, idx) {
+    gsap_1.default.to(fadeEl, 1, {
+        delay: (idx + 1) * 0.7,
+        opacity: 1,
+    });
+});
