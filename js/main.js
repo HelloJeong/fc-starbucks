@@ -7,6 +7,7 @@ var lodash_1 = __importDefault(require("lodash"));
 var gsap_1 = __importDefault(require("gsap"));
 var bundle_1 = __importDefault(require("swiper/bundle"));
 require("swiper/swiper-bundle.css");
+var all_1 = require("gsap/all");
 (function () {
     var searchEl = document.querySelector(".search");
     if (searchEl instanceof HTMLDivElement) {
@@ -86,4 +87,20 @@ require("swiper/swiper-bundle.css");
             }
         });
     }
+    var random = function (min, max) {
+        return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+    };
+    var floatingObject = function (selector, delay, y) {
+        // y : y축, yoyo: 끝나면 역재생
+        gsap_1.default.to(selector, random(1.5, 2.5), {
+            y: y,
+            repeat: -1,
+            yoyo: true,
+            ease: all_1.Power1.easeInOut,
+            delay: random(0, delay),
+        });
+    };
+    floatingObject(".floating1", 1, 15);
+    floatingObject(".floating2", 0.5, 15);
+    floatingObject(".floating3", 1.5, 20);
 })();

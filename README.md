@@ -96,7 +96,8 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
 
 - `gsap`
   - 애니메이션을 쉽게 사용하기 위함
-  - `to(ele, duration_sec, option)`
+  - `to(ele, duration_sec, option)`([참고](<http://greensock.com/docs/v3/GSAP/gsap.to()>))
+  - `easing 함수`([참고](https://greensock.com/docs/v2/Easing))
 
 ### 요소 슬라이드
 
@@ -108,3 +109,33 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
   1. position: absolute
   1. left: 50%
   1. margin-left: 현재 박스의 가로길이 / 2
+
+### 유튜브 영상 배경
+
+```html
+<div class="container">
+  <div class="item"></div>
+</div>
+```
+
+```css
+.container {
+  width: 200px;
+  background-color: royalblue;
+}
+.container .item {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 부모 가로 길이를 따라감 */
+}
+```
+
+- `16:9 = 100%:56.25%`
+
+- `youtube iframe api`([참고](https://developers.google.com/youtube/iframe_api_reference?hl=ko))
+
+```text
+Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin ('http://localhost:1234').
+```
+
+- 위와 같은 에러가 발생, 해결법은 아직 못 찾음

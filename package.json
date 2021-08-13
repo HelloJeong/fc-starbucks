@@ -29,6 +29,7 @@
   "dependencies": {
     "gsap": "^3.7.1",
     "lodash": "^4.17.21",
-    "swiper": "^6.8.1"
+    "swiper": "^6.8.1",
+    "youtube-iframe": "^1.0.3"
   }
 }

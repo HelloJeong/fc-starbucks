@@ -475,6 +475,7 @@ header .badges .badge {
 .rewards {
   position: relative;
 }
+
 .rewards .bg-left {
   width: 50%;
   height: 100%;
@@ -483,6 +484,7 @@ header .badges .badge {
   top: 0;
   left: 0;
 }
+
 .rewards .bg-right {
   width: 50%;
   height: 100%;
@@ -491,6 +493,7 @@ header .badges .badge {
   top: 0;
   right: 0;
 }
+
 .rewards .inner {
   background-image: url("../images/rewards.jpg");
   height: 241px;
@@ -504,13 +507,83 @@ header .badges .badge {
   display: flex;
   flex-wrap: wrap;
 }
+
 .rewards .btn-group .btn.sign-up {
   margin-right: 10px;
 }
+
 .rewards .btn-group .btn.sign-in {
   width: 110px;
 }
+
 .rewards .btn-group .btn.gift {
   margin-top: 10px;
   flex-grow: 1;
+}
+
+/* YOUTUBE VIDEO */
+
+.youtube {
+  position: relative;
+  height: 700px;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.youtube .youtube__area {
+  width: 1920px;
+  background-color: orange;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: calc(1920px / -2);
+  margin-top: calc(1920px * 9 / 16 / -2);
+}
+
+.youtube .youtube__area::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.youtube .youtube__cover {
+  background-image: url("../images/video_cover_pattern.png");
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#player {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.youtube .inner {
+  height: 700px;
+}
+
+.youtube .floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.youtube .floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+
+.youtube .floating3 {
+  position: absolute;
+  bottom: -200px;
+  right: 0;
 }

@@ -2,6 +2,7 @@ import _ from "lodash";
 import gsap from "gsap";
 import Swiper from "swiper/bundle";
 import "swiper/swiper-bundle.css";
+import { Power1 } from "gsap/all";
 
 (function () {
   const searchEl = document.querySelector(".search");
@@ -91,4 +92,21 @@ import "swiper/swiper-bundle.css";
       }
     });
   }
+  const random = (min: number, max: number): number => {
+    return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+  };
+
+  const floatingObject = (selector: string, delay: number, y: number) => {
+    // y : y축, yoyo: 끝나면 역재생
+    gsap.to(selector, random(1.5, 2.5), {
+      y,
+      repeat: -1,
+      yoyo: true,
+      ease: Power1.easeInOut,
+      delay: random(0, delay),
+    });
+  };
+  floatingObject(".floating1", 1, 15);
+  floatingObject(".floating2", 0.5, 15);
+  floatingObject(".floating3", 1.5, 20);
 })();
