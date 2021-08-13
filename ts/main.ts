@@ -1,5 +1,7 @@
 import _ from "lodash";
 import gsap from "gsap";
+import Swiper from "swiper/bundle";
+import "swiper/swiper-bundle.css";
 
 (function () {
   const searchEl = document.querySelector(".search");
@@ -50,4 +52,10 @@ fadeEls.forEach((fadeEl, idx) => {
     delay: (idx + 1) * 0.7,
     opacity: 1,
   });
+});
+
+new Swiper(".notice-line .swiper-container", {
+  direction: "vertical",
+  autoplay: true,
+  loop: true,
 });

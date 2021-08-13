@@ -5,6 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var lodash_1 = __importDefault(require("lodash"));
 var gsap_1 = __importDefault(require("gsap"));
+var bundle_1 = __importDefault(require("swiper/bundle"));
+require("swiper/swiper-bundle.css");
 (function () {
     var searchEl = document.querySelector(".search");
     if (searchEl instanceof HTMLDivElement) {
@@ -48,4 +50,9 @@ fadeEls.forEach(function (fadeEl, idx) {
         delay: (idx + 1) * 0.7,
         opacity: 1,
     });
+});
+new bundle_1.default(".notice-line .swiper-container", {
+    direction: "vertical",
+    autoplay: true,
+    loop: true,
 });
