@@ -16,10 +16,7 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Starbucks" />
   <meta property="og:title" content="Starbucks Coffee Korea" />
-  <meta
-    property="og:description"
-    content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다."
-  />
+  <meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
   <meta property="og:image" content="./images/starbucks_seo.jpg" />
   <meta property="og:url" content="https://starbucks.co.kr" />
   ```
@@ -32,10 +29,7 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:site" content="Starbucks" />
   <meta property="twitter:title" content="Starbucks Coffee Korea" />
-  <meta
-    property="twitter:description"
-    content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다."
-  />
+  <meta property="twitter:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
   <meta property="twitter:image" content="./images/starbucks_seo.jpg" />
   <meta property="twitter:url" content="https://starbucks.co.kr" />
   ```
@@ -107,3 +101,10 @@ _Fastcampus Front-end Starbucks Clone 강의 내용을 정리해둔 자료입니
 ### 요소 슬라이드
 
 - `swiper js`
+
+  - `new Swiper(selector, option)`
+
+- 박스를 확대/축소해도 가운데에 유지 시키기
+  1. position: absolute
+  1. left: 50%
+  1. margin-left: 현재 박스의 가로길이 / 2

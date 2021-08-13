@@ -28,7 +28,7 @@ require("swiper/swiper-bundle.css");
     var badgeEl = document.querySelector("header .badges");
     if (badgeEl instanceof HTMLDivElement) {
         window.addEventListener("scroll", lodash_1.default.throttle(function () {
-            console.log(window.scrollY);
+            // console.log(window.scrollY);
             if (window.scrollY > 500) {
                 gsap_1.default.to(badgeEl, 0.6, {
                     opacity: 0,
@@ -43,16 +43,47 @@ require("swiper/swiper-bundle.css");
             }
         }, 300));
     }
-})();
-var fadeEls = document.querySelectorAll(".fade-in");
-fadeEls.forEach(function (fadeEl, idx) {
-    gsap_1.default.to(fadeEl, 1, {
-        delay: (idx + 1) * 0.7,
-        opacity: 1,
+    var fadeEls = document.querySelectorAll(".fade-in");
+    fadeEls.forEach(function (fadeEl, idx) {
+        gsap_1.default.to(fadeEl, 1, {
+            delay: (idx + 1) * 0.7,
+            opacity: 1,
+        });
     });
-});
-new bundle_1.default(".notice-line .swiper-container", {
-    direction: "vertical",
-    autoplay: true,
-    loop: true,
-});
+    new bundle_1.default(".notice-line .swiper-container", {
+        direction: "vertical",
+        autoplay: true,
+        loop: true,
+    });
+    new bundle_1.default(".promotion .swiper-container", {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: ".promotion .swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            prevEl: ".promotion .swiper-prev",
+            nextEl: ".promotion .swiper-next",
+        },
+    });
+    var promotionEl = document.querySelector(".promotion");
+    var promotionToggleBtn = document.querySelector(".toggle-promotion");
+    var isHidePromotion = false;
+    if (promotionEl instanceof HTMLDivElement && promotionToggleBtn instanceof HTMLDivElement) {
+        promotionToggleBtn.addEventListener("click", function () {
+            isHidePromotion = !isHidePromotion;
+            if (isHidePromotion) {
+                promotionEl.classList.add("hide");
+            }
+            else {
+                promotionEl.classList.remove("hide");
+            }
+        });
+    }
+})();
