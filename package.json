@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:client": "parcel index.html",
+    "dev:client": "parcel index.html *.html",
     "dev:ts": "tsc -w",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:ts\""
   },

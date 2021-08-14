@@ -12,23 +12,6 @@ var all_1 = require("gsap/all");
 var scrollmagic_1 = __importDefault(require("scrollmagic"));
 (function () {
     gsap_1.default.registerPlugin(ScrollToPlugin_1.default);
-    var searchEl = document.querySelector(".search");
-    if (searchEl instanceof HTMLDivElement) {
-        var searchInputEl_1 = searchEl.querySelector("input");
-        if (searchInputEl_1 instanceof HTMLInputElement) {
-            searchEl.addEventListener("click", function () {
-                searchInputEl_1.focus();
-            });
-            searchInputEl_1.addEventListener("focus", function () {
-                searchEl.classList.add("focused");
-                searchInputEl_1.setAttribute("placeholder", "통합검색");
-            });
-            searchInputEl_1.addEventListener("blur", function () {
-                searchEl.classList.remove("focused");
-                searchInputEl_1.setAttribute("placeholder", "");
-            });
-        }
-    }
     var badgeEl = document.querySelector("header .badges");
     var toTopEl = document.querySelector("#to-top");
     if (badgeEl instanceof HTMLDivElement && toTopEl instanceof HTMLDivElement) {
@@ -137,8 +120,4 @@ var scrollmagic_1 = __importDefault(require("scrollmagic"));
             .setClassToggle(triggerElement, "show") // 훅을 지나게되면 'show' 클래스 추가해줌
             .addTo(new scrollmagic_1.default.Controller());
     });
-    var thisYear = document.querySelector(".this-year");
-    if (thisYear instanceof HTMLSpanElement) {
-        thisYear.textContent = new Date().getFullYear().toString();
-    }
 })();
