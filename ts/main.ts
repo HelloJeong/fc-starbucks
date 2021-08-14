@@ -3,6 +3,7 @@ import gsap from "gsap";
 import Swiper from "swiper/bundle";
 import "swiper/swiper-bundle.css";
 import { Power1 } from "gsap/all";
+import ScrollMagic from "scrollmagic";
 
 (function () {
   const searchEl = document.querySelector(".search");
@@ -109,4 +110,14 @@ import { Power1 } from "gsap/all";
   floatingObject(".floating1", 1, 15);
   floatingObject(".floating2", 0.5, 15);
   floatingObject(".floating3", 1.5, 20);
+
+  const spyEls = document.querySelectorAll("section.scroll-spy");
+  spyEls.forEach((triggerElement) => {
+    new ScrollMagic.Scene({
+      triggerElement, // 보여짐 여부를 감시할 요소
+      triggerHook: 0.8, // viewport 상단:0, 하단:1. 요소가 0.8 위치에 걸리면 트리거
+    })
+      .setClassToggle(triggerElement, "show") // 훅을 지나게되면 'show' 클래스 추가해줌
+      .addTo(new ScrollMagic.Controller());
+  });
 })();

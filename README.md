@@ -179,3 +179,7 @@ Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('htt
   transform: rotateY(0deg);
 }
 ```
+
+### 스크롤 위치 계산 애니메이션
+
+- `scrollMagic`

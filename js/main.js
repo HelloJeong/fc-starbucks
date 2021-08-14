@@ -8,6 +8,7 @@ var gsap_1 = __importDefault(require("gsap"));
 var bundle_1 = __importDefault(require("swiper/bundle"));
 require("swiper/swiper-bundle.css");
 var all_1 = require("gsap/all");
+var scrollmagic_1 = __importDefault(require("scrollmagic"));
 (function () {
     var searchEl = document.querySelector(".search");
     if (searchEl instanceof HTMLDivElement) {
@@ -103,4 +104,13 @@ var all_1 = require("gsap/all");
     floatingObject(".floating1", 1, 15);
     floatingObject(".floating2", 0.5, 15);
     floatingObject(".floating3", 1.5, 20);
+    var spyEls = document.querySelectorAll("section.scroll-spy");
+    spyEls.forEach(function (triggerElement) {
+        new scrollmagic_1.default.Scene({
+            triggerElement: triggerElement,
+            triggerHook: 0.8, // viewport 상단:0, 하단:1. 요소가 0.8 위치에 걸리면 트리거
+        })
+            .setClassToggle(triggerElement, "show") // 훅을 지나게되면 'show' 클래스 추가해줌
+            .addTo(new scrollmagic_1.default.Controller());
+    });
 })();
