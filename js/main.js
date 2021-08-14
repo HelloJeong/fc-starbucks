@@ -74,6 +74,16 @@ var scrollmagic_1 = __importDefault(require("scrollmagic"));
             nextEl: ".promotion .swiper-next",
         },
     });
+    new bundle_1.default(".awards .swiper-container", {
+        autoplay: true,
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: 5,
+        navigation: {
+            prevEl: ".awards .swiper-prev",
+            nextEl: ".awards .swiper-next",
+        },
+    });
     var promotionEl = document.querySelector(".promotion");
     var promotionToggleBtn = document.querySelector(".toggle-promotion");
     var isHidePromotion = false;
