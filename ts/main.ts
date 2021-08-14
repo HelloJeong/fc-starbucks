@@ -8,25 +8,6 @@ import ScrollMagic from "scrollmagic";
 
 (function () {
   gsap.registerPlugin(ScrollToPlugin);
-  const searchEl = document.querySelector(".search");
-  if (searchEl instanceof HTMLDivElement) {
-    const searchInputEl = searchEl.querySelector("input");
-    if (searchInputEl instanceof HTMLInputElement) {
-      searchEl.addEventListener("click", () => {
-        searchInputEl.focus();
-      });
-
-      searchInputEl.addEventListener("focus", () => {
-        searchEl.classList.add("focused");
-        searchInputEl.setAttribute("placeholder", "통합검색");
-      });
-
-      searchInputEl.addEventListener("blur", () => {
-        searchEl.classList.remove("focused");
-        searchInputEl.setAttribute("placeholder", "");
-      });
-    }
-  }
 
   const badgeEl = document.querySelector("header .badges");
   const toTopEl = document.querySelector("#to-top");
@@ -146,9 +127,4 @@ import ScrollMagic from "scrollmagic";
       .setClassToggle(triggerElement, "show") // 훅을 지나게되면 'show' 클래스 추가해줌
       .addTo(new ScrollMagic.Controller());
   });
-
-  const thisYear = document.querySelector(".this-year");
-  if (thisYear instanceof HTMLSpanElement) {
-    thisYear.textContent = new Date().getFullYear().toString();
-  }
 })();
