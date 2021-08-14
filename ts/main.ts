@@ -1,11 +1,13 @@
 import _ from "lodash";
 import gsap from "gsap";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 import Swiper from "swiper/bundle";
 import "swiper/swiper-bundle.css";
 import { Power1 } from "gsap/all";
 import ScrollMagic from "scrollmagic";
 
 (function () {
+  gsap.registerPlugin(ScrollToPlugin);
   const searchEl = document.querySelector(".search");
   if (searchEl instanceof HTMLDivElement) {
     const searchInputEl = searchEl.querySelector("input");
@@ -27,7 +29,8 @@ import ScrollMagic from "scrollmagic";
   }
 
   const badgeEl = document.querySelector("header .badges");
-  if (badgeEl instanceof HTMLDivElement) {
+  const toTopEl = document.querySelector("#to-top");
+  if (badgeEl instanceof HTMLDivElement && toTopEl instanceof HTMLDivElement) {
     window.addEventListener(
       "scroll",
       _.throttle(() => {
@@ -37,14 +40,25 @@ import ScrollMagic from "scrollmagic";
             opacity: 0,
             display: "none",
           });
+          gsap.to("#to-top", 0.2, {
+            x: 0,
+          });
         } else {
           gsap.to(badgeEl, 0.6, {
             opacity: 1,
             display: "block",
           });
+          gsap.to("#to-top", 0.2, {
+            x: 100,
+          });
         }
       }, 300)
     );
+    toTopEl.addEventListener("click", () => {
+      gsap.to(window, 0.7, {
+        scrollTo: 0,
+      });
+    });
   }
 
   const fadeEls = document.querySelectorAll(".fade-in");
@@ -132,4 +146,9 @@ import ScrollMagic from "scrollmagic";
       .setClassToggle(triggerElement, "show") // 훅을 지나게되면 'show' 클래스 추가해줌
       .addTo(new ScrollMagic.Controller());
   });
+
+  const thisYear = document.querySelector(".this-year");
+  if (thisYear instanceof HTMLSpanElement) {
+    thisYear.textContent = new Date().getFullYear().toString();
+  }
 })();

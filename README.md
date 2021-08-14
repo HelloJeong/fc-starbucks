@@ -183,3 +183,13 @@ Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('htt
 ### 스크롤 위치 계산 애니메이션
 
 - `scrollMagic`
+
+### 푸터영역
+
+- [html5 특수문자 참고표](https://dev.w3.org/html5/html-author/charref)
+
+- img요소가 `display: block` + `margin: 0 auto;`인 경우, width 속성 없이도 가운데 정렬이 가능
+
+### to-top
+
+- `gsap.registerPlugin(등록할 플러그인, ...)`

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/HelloJeong/fc-starbucks#readme",
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/lodash": "^4.14.172",
     "@types/scrollmagic": "^2.0.2",
     "concurrently": "^6.2.1",

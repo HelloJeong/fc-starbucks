@@ -5,11 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var lodash_1 = __importDefault(require("lodash"));
 var gsap_1 = __importDefault(require("gsap"));
+var ScrollToPlugin_1 = __importDefault(require("gsap/ScrollToPlugin"));
 var bundle_1 = __importDefault(require("swiper/bundle"));
 require("swiper/swiper-bundle.css");
 var all_1 = require("gsap/all");
 var scrollmagic_1 = __importDefault(require("scrollmagic"));
 (function () {
+    gsap_1.default.registerPlugin(ScrollToPlugin_1.default);
     var searchEl = document.querySelector(".search");
     if (searchEl instanceof HTMLDivElement) {
         var searchInputEl_1 = searchEl.querySelector("input");
@@ -28,7 +30,8 @@ var scrollmagic_1 = __importDefault(require("scrollmagic"));
         }
     }
     var badgeEl = document.querySelector("header .badges");
-    if (badgeEl instanceof HTMLDivElement) {
+    var toTopEl = document.querySelector("#to-top");
+    if (badgeEl instanceof HTMLDivElement && toTopEl instanceof HTMLDivElement) {
         window.addEventListener("scroll", lodash_1.default.throttle(function () {
             // console.log(window.scrollY);
             if (window.scrollY > 500) {
@@ -36,14 +39,25 @@ var scrollmagic_1 = __importDefault(require("scrollmagic"));
                     opacity: 0,
                     display: "none",
                 });
+                gsap_1.default.to("#to-top", 0.2, {
+                    x: 0,
+                });
             }
             else {
                 gsap_1.default.to(badgeEl, 0.6, {
                     opacity: 1,
                     display: "block",
                 });
+                gsap_1.default.to("#to-top", 0.2, {
+                    x: 100,
+                });
             }
         }, 300));
+        toTopEl.addEventListener("click", function () {
+            gsap_1.default.to(window, 0.7, {
+                scrollTo: 0,
+            });
+        });
     }
     var fadeEls = document.querySelectorAll(".fade-in");
     fadeEls.forEach(function (fadeEl, idx) {
@@ -123,4 +137,8 @@ var scrollmagic_1 = __importDefault(require("scrollmagic"));
             .setClassToggle(triggerElement, "show") // 훅을 지나게되면 'show' 클래스 추가해줌
             .addTo(new scrollmagic_1.default.Controller());
     });
+    var thisYear = document.querySelector(".this-year");
+    if (thisYear instanceof HTMLSpanElement) {
+        thisYear.textContent = new Date().getFullYear().toString();
+    }
 })();
